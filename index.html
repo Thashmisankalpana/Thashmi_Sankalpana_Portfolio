@@ -700,11 +700,19 @@
                 height: calc(100vh - var(--nav-height));
                 background: var(--bg-dark);
                 flex-direction: column;
-                justify-content: center;
+                justify-content: center; /* Vertically center */
+                align-items: center;    /* Horizontally center links */
                 transition: 0.4s ease;
+                gap: 40px; /* Space between links */
             }
             .nav-links.active { right: 0; }
             .hamburger { display: block; }
+            
+            /* Make mobile links bigger and centered text */
+            .nav-links a {
+                font-size: 1.5rem;
+                text-align: center;
+            }
             
             .timeline::after { left: 10px; }
             .timeline-item { padding-left: 40px; }
