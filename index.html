@@ -24,7 +24,7 @@
             --bg-card: #1e293b; /* Slate 800 */
             --text-main: #f1f5f9; /* Slate 100 */
             --text-muted: #94a3b8; /* Slate 400 */
-            --gradient: linear-googleapis(135deg, var(--primary-color), var(--secondary-color));
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             --nav-height: 70px;
             --transition: all 0.3s ease;
         }
@@ -267,7 +267,33 @@
             min-width: 300px;
         }
 
-        /* --- Education Timeline (New) --- */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            background: var(--bg-card);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Education Timeline --- */
         #education {
             background-color: var(--bg-dark);
         }
@@ -369,7 +395,7 @@
             color: var(--text-muted);
         }
 
-        /* --- Certifications (New) --- */
+        /* --- Certifications --- */
         #certifications {
             background-color: #162033;
         }
@@ -525,6 +551,25 @@
             font-weight: 600;
         }
 
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .project-link {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .project-link:hover {
+            color: var(--primary-color);
+        }
+
         /* --- Contact Section --- */
         .contact-container {
             display: flex;
@@ -563,6 +608,13 @@
 
         .form-group {
             margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            font-size: 0.9rem;
         }
 
         .form-control {
@@ -657,6 +709,10 @@
             .timeline::after { left: 10px; }
             .timeline-item { padding-left: 40px; }
             .timeline-item::after { left: 3px; }
+            
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 
@@ -706,8 +762,8 @@
             
             <div class="about-content">
                 <div class="about-img">
-                    <!-- Using a random seed to generate a consistent avatar -->
-                    <img src="images/thashmi.jpeg" alt="Thashmi Sankalpana">
+                    <!-- Ensure images folder exists in your repo -->
+                    <img src="images/thashmi.jpeg" alt="Thashmi Sankalpana" onerror="this.src='https://picsum.photos/seed/thashmi/400/400.jpg'">
                 </div>
                 <div class="about-text">
                     <h3>I'm a Student & Developer</h3>
@@ -739,7 +795,7 @@
         </div>
     </section>
 
-<!-- Education Section (New) -->
+<!-- Education Section -->
     <section id="education">
         <div class="container">
             <h2 class="section-title">Education</h2>
@@ -801,7 +857,7 @@
         </div>
     </section>
 
-    <!-- Certifications Section (New) -->
+    <!-- Certifications Section -->
     <section id="certifications">
         <div class="container">
             <h2 class="section-title">Certifications</h2>
@@ -869,7 +925,7 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="images/codecamp.jpg" alt="Coding Bootcamp">
+                        <img src="images/codecamp.jpg" alt="Coding Bootcamp" onerror="this.src='https://picsum.photos/seed/codecamp/600/400.jpg'">
                     </div>
                     <div class="project-info">
                         <h3>Online Coding Bootcamp</h3>
@@ -890,7 +946,7 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="images/arogya.jpg" alt="Arogya Healthcare">
+                        <img src="images/arogya.jpg" alt="Arogya Healthcare" onerror="this.src='https://picsum.photos/seed/hospital/600/400.jpg'">
                     </div>
                     <div class="project-info">
                         <h3>Arogya Healthcare</h3>
@@ -911,7 +967,7 @@
                 <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="images/clothing.jpg" alt="Clothing Brand E-Commerce">
+                        <img src="images/clothing.jpg" alt="Clothing Brand E-Commerce" onerror="this.src='https://picsum.photos/seed/fashion/600/400.jpg'">
                     </div>
                     <div class="project-info">
                         <h3>Clothing Brand Store</h3>
@@ -931,7 +987,7 @@
                 <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="images/eapartment.jpg" alt="E-Apartments System">
+                        <img src="images/eapartment.jpg" alt="E-Apartments System" onerror="this.src='https://picsum.photos/seed/apt/600/400.jpg'">
                     </div>
                     <div class="project-info">
                         <h3>E-Apartments System</h3>
@@ -943,7 +999,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/Thashmisankalpana/E-Apartments.git" class="project-link"><i class="fab fa-github"></i> Code</a>
-			    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
                         </div>
                     </div>
                 </div>
@@ -951,7 +1007,7 @@
                 <!-- Project 5 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="images/vehicle.jpg" alt="Smart Vehicle Booking">
+                        <img src="images/vehicle.jpg" alt="Smart Vehicle Booking" onerror="this.src='https://picsum.photos/seed/car/600/400.jpg'">
                     </div>
                     <div class="project-info">
                         <h3>Smart Vehicle Booking</h3>
@@ -963,7 +1019,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/Thashmisankalpana/Smart-Vehicle-Booking-Trip-Advisor.git" class="project-link"><i class="fab fa-github"></i> Code</a>
-			    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
                         </div>
                     </div>
                 </div>
@@ -1106,7 +1162,8 @@
                 });
             }, observerOptions);
 
-            const animatedElements = document.querySelectorAll('.section-title, .section-subtitle, .skill-card, .project-card, .about-content, .contact-container');
+            // CRITICAL FIX: Added .timeline-item and .cert-card to this list
+            const animatedElements = document.querySelectorAll('.section-title, .section-subtitle, .skill-card, .project-card, .about-content, .contact-container, .timeline-item, .cert-card');
             animatedElements.forEach(el => observer.observe(el));
 
             /* --- Contact Form Handling --- */
@@ -1140,4 +1197,5 @@
         });
     </script>
 </body>
+
 </html>
