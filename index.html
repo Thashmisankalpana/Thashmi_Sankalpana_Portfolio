@@ -162,18 +162,10 @@
         }
 
         nav {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
             height: 100%;
-        }
-
-        nav .nav-links {
-            justify-self: center;
-        }
-
-        nav .hamburger {
-            justify-self: end;
         }
 
         .logo {
@@ -191,6 +183,8 @@
         .nav-links {
             display: flex;
             gap: 25px;
+            align-items: center;
+            height: 100%;
         }
 
         .nav-links a {
@@ -1096,7 +1090,7 @@
         <div class="hero-content">
             <h3>Hi, I'm</h3>
             <h1>Thashmi Sankalpana Mendis</h1>
-            <h2>Software Developer &nbsp;|&nbsp; Web Developer &nbsp;|&nbsp; UI/UX Designer &nbsp;|&nbsp; Front-End Developer</h2>
+            <h2>Software Developer &nbsp;|&nbsp; Web Developer &nbsp;|&nbsp; Front-End Developer</h2>
             <p>Passionate undergraduate student dedicated to crafting responsive, user-friendly web experiences and building real-world solutions through code.</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
