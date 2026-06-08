@@ -140,7 +140,11 @@
             box-shadow: 0 6px 20px rgba(129, 140, 248, 0.25);
         }
 
-        /* --- Reveal Animation --- */
+        header .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
         .reveal {
             opacity: 1 !important;
             transform: translateY(0) !important;
@@ -183,6 +187,14 @@
         .nav-links {
             display: flex;
             gap: 25px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .nav-links li {
+            display: flex;
             align-items: center;
             height: 100%;
         }
@@ -1095,11 +1107,9 @@
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-outline">Contact Me</a>
-                <a href="https://raw.githubusercontent.com/Thashmisankalpana/Thashmisankalpana/main/CV.pdf"
-                   download="Thashmi_Sankalpana_CV.pdf"
-                   class="btn btn-cv">
+                <button onclick="downloadCV()" class="btn btn-cv">
                     <i class="fas fa-download"></i> Download CV
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -1592,15 +1602,11 @@
                             </a>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" style="cursor:pointer;" onclick="downloadCV()">
                         <i class="fas fa-file-arrow-down" style="color: var(--secondary-color);"></i>
                         <div>
                             <h4>Curriculum Vitae</h4>
-                            <a href="https://raw.githubusercontent.com/Thashmisankalpana/Thashmisankalpana/main/CV.pdf"
-                               download="Thashmi_Sankalpana_CV.pdf"
-                               style="color: var(--secondary-color);">
-                                Download my CV (PDF)
-                            </a>
+                            <span style="color: var(--secondary-color); font-size: 0.9rem;">Download my CV (PDF)</span>
                         </div>
                     </div>
                 </div>
@@ -1746,6 +1752,39 @@
                     setTimeout(() => toast.classList.remove('show'), 3500);
                 }, 1500);
             });
+            /* ─── CV Direct Download ─── */
+            window.downloadCV = function() {
+                const url = 'https://raw.githubusercontent.com/Thashmisankalpana/Thashmisankalpana/main/CV.pdf';
+                const filename = 'Thashmi_Sankalpana_CV.pdf';
+
+                // Show loading state on button
+                const btns = document.querySelectorAll('.btn-cv');
+                btns.forEach(b => { b.style.opacity = '0.6'; b.style.pointerEvents = 'none'; });
+
+                fetch(url)
+                    .then(res => {
+                        if (!res.ok) throw new Error('Network response was not ok');
+                        return res.blob();
+                    })
+                    .then(blob => {
+                        const blobUrl = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = blobUrl;
+                        a.download = filename;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(blobUrl);
+                    })
+                    .catch(() => {
+                        // Fallback: open in new tab if fetch fails
+                        window.open(url, '_blank');
+                    })
+                    .finally(() => {
+                        btns.forEach(b => { b.style.opacity = ''; b.style.pointerEvents = ''; });
+                    });
+            };
+
         });
     </script>
 </body>
