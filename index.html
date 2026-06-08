@@ -124,6 +124,22 @@
             transform: translateY(-2px);
         }
 
+        .btn-cv {
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            margin-left: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-cv:hover {
+            background: rgba(129, 140, 248, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(129, 140, 248, 0.25);
+        }
+
         /* --- Reveal Animation --- */
         .reveal {
             opacity: 1 !important;
@@ -1077,6 +1093,11 @@
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-outline">Contact Me</a>
+                <a href="https://raw.githubusercontent.com/Thashmisankalpana/Thashmisankalpana/main/CV.pdf"
+                   download="Thashmi_Sankalpana_CV.pdf"
+                   class="btn btn-cv">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
             </div>
         </div>
     </section>
@@ -1286,7 +1307,7 @@
             <div class="ui-grid">
 
                 <div class="ui-card">
-                    <img src="images/smartkidney-ui.png" alt="SMART Kidney Care UI Design"
+                    <img src="images/ui_health.png" alt="SMART Kidney Care UI Design"
                          onerror="this.src='https://picsum.photos/seed/uiux1/800/500'">
                     <div class="ui-content">
                         <h3>SMART Kidney Care Mobile Application UI/UX</h3>
@@ -1566,6 +1587,17 @@
                             <h4>LinkedIn</h4>
                             <a href="https://www.linkedin.com/in/thashmi-sankalpana-mendis-a4b7b3242" target="_blank" rel="noopener noreferrer">
                                 linkedin.com/in/thashmisankalpana
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-file-arrow-down" style="color: var(--secondary-color);"></i>
+                        <div>
+                            <h4>Curriculum Vitae</h4>
+                            <a href="https://raw.githubusercontent.com/Thashmisankalpana/Thashmisankalpana/main/CV.pdf"
+                               download="Thashmi_Sankalpana_CV.pdf"
+                               style="color: var(--secondary-color);">
+                                Download my CV (PDF)
                             </a>
                         </div>
                     </div>
