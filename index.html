@@ -735,6 +735,81 @@
                 grid-template-columns: 1fr;
             }
         }
+                    /* --- UI Designs Section --- */
+            #ui-designs {
+            background-color: var(--bg-dark);
+            }
+            
+            .ui-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            }
+            
+            .ui-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            }
+            
+            .ui-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            }
+            
+            .ui-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            }
+            
+            .ui-card:hover img {
+            transform: scale(1.05);
+            }
+            
+            .ui-content {
+            padding: 20px;
+            }
+            
+            .ui-content h3 {
+            margin-bottom: 10px;
+            }
+            
+            .ui-content p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            }
+            
+            .design-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+            }
+            
+            .design-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            }
+            
+            .design-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            }
+            
+            .design-link:hover {
+            color: #ffffff;
+            }
+
     </style>
 
 </head>
@@ -751,6 +826,7 @@
                     <li><a href="#education">Education</a></li>
                     <li><a href="#certifications">Certificates</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#ui-designs">UI Designs</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -997,6 +1073,57 @@
     </div>
 </section>
 
+            <!-- UI Designs Section -->
+        
+        <section id="ui-designs">
+            <div class="container">
+                <h2 class="section-title">UI / UX Designs</h2>
+                <p class="section-subtitle">Healthcare and Mobile Application Designs</p>
+        
+        ```
+            <div class="ui-grid">
+        
+                <div class="ui-card">
+                    <img src="images/smartkidney-ui.png"
+                         alt="SMART Kidney Care UI Design"
+                         onerror="this.src='https://picsum.photos/seed/uiux/800/500.jpg'">
+        
+                    <div class="ui-content">
+                        <h3>SMART Kidney Care Mobile Application UI/UX</h3>
+        
+                        <p>
+                            Designed and prototyped the complete user interface for
+                            the SMART Kidney Care healthcare application. The design
+                            includes authentication, patient dashboard, CKD risk
+                            prediction, laboratory report submission, progress
+                            monitoring, appointment management, and doctor panels.
+                        </p>
+        
+                        <div class="design-tags">
+                            <span class="design-tag">Figma</span>
+                            <span class="design-tag">UI Design</span>
+                            <span class="design-tag">UX Design</span>
+                            <span class="design-tag">Healthcare</span>
+                            <span class="design-tag">Mobile App</span>
+                        </div>
+        
+                        <a href="https://www.figma.com/design/32ZIUGufOYmtP84hjAbPro/RUSL_Final_Project?node-id=262-1035&t=UOG9vuj64GcPY5XY-1"
+                           target="_blank"
+                           class="design-link">
+                            <i class="fab fa-figma"></i>
+                            View Figma Prototype
+                        </a>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        ```
+        
+        </section>
+
+
+    
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
